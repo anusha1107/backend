@@ -18,7 +18,7 @@ app.post("/submit", (req, res) => {
   const { name, message } = req.body;
 
   // Log to backend console when frontend submits form
-  console.log(`Received feedback from ${name}: "${message}"`);
+  console.log(`Form submitted by ${name}`);
 
   // Send response back to frontend
   res.send(`Hi ${name}, your message '${message}' was received successfully!`);
@@ -28,3 +28,4 @@ app.post("/submit", (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+
