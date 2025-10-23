@@ -12,7 +12,7 @@ app.use(cors({
 app.use(express.json());
 
 // Routes
-
+app.get("/", (req, res) => { res.send("Form submitted successfully!"); });
 
 app.post("/", (req, res) => {
   const { name, message } = req.body;
