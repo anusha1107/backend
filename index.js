@@ -1,6 +1,6 @@
 // index.js
-const express = require("express");
-const cors = require("cors");
+import express from "express";
+import cors from "cors";
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -17,15 +17,10 @@ app.get("/", (req, res) => {
 app.post("/submit", (req, res) => {
   const { name, message } = req.body;
 
-  // Log to backend console when frontend submits form
   console.log(`Form submitted by ${name}`);
-
-  // Send response back to frontend
   res.send(`Hi ${name}, your message '${message}' was received successfully!`);
 });
 
-// Start server
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
-
