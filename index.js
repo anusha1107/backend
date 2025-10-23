@@ -14,7 +14,7 @@ app.use(express.json());
 // Routes
 app.get("/", (req, res) => { res.send("Form submitted successfully!"); });
 
-app.post("/", (req, res) => {
+app.post("/submit", (req, res) => {
   const { name, message } = req.body;
   console.log(`Form submitted by ${name}`);
   res.send(`Hi ${name}, your message '${message}' was received successfully!`);
@@ -23,5 +23,6 @@ app.post("/", (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+
 
 
